@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Sell Yer Car</title>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+    </head>
+    <body>
+        <div class='container'>
+            <h3>Add your car or whatever</h3>
+            <form action='/car_added' method='post'>
+
+                <div class='row'>
+                    <div class='form-group'>
+                        <div class='col-md-2'>
+                            <label for='make_model'>Make/Model</label>
+                        </div>
+                        <div class='col-md-6'>
+                            <input id='make_model' name='make_model' type='text'>
+                        </div>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='form-group'>
+                        <div class='col-md-2'>
+                            <label for='price'>Doll Hairs</label>
+                        </div>
+                        <div class='col-md-6'>
+                            <input id='price' name='price' type='text'>
+                        </div>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='form-group'>
+                        <div class='col-md-2'>
+                            <label for='miles'>Current Mileage</label>
+                        </div>
+                        <div class='col-md-6'>
+                            <input id='miles' name='miles' type='number'>
+                        </div>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='form-group'>
+                        <div class='col-md-2'>
+                            <label for='image_path'>Image Path Sorry TYPE it yourself</label>
+                        </div>
+                        <div class='col-md-6'>
+                            <input id='image_path' name='image_path' type='text'>
+                        </div>
+                    </div>
+                </div>
+
+                <button type='submit'>Add Car</button>
+
+            </form>
+        </div>
+    </body>
+</html>

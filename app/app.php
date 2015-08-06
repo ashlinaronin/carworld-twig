@@ -17,8 +17,17 @@
         'twig.path' => __DIR__.'/../views'
     ));
 
+    // If Twig doesn't need to display any special data, we don't need to pass it an array at all.
     $app->get('/', function() use ($app) {
-        return $app['twig']->render('cars-welcome.html.twig', array());
+        return $app['twig']->render('welcome.html.twig');
+    });
+
+    $app->get('/buy', function() use ($app) {
+        return $app['twig']->render('buy.html.twig');
+    });
+
+    $app->get('/sell', function() use ($app) {
+        return $app['twig']->render('sell.html.twig');
     });
 
     $app->post('/results', function() use ($app) {
@@ -40,6 +49,8 @@
         return $app['twig']->render('results.html.twig', array('search_results' => $cars_matching_search));
 
     });
+
+    // /sell_car
 
     return $app;
 
