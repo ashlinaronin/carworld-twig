@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Car Summary</title>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+    </head>
+    <body>
+        <div class='container'>
+            <h1>Here is what you think you are going to sell:</h1>
+                <ul>
+                    <div>
+                        <li>{{newcar.getImagePath}}</li>
+                        <li>{{newcar.getMake}}</li>
+                        <li>Miles: {{newcar.getMiles}}</li>
+                        <li>${{newcar.getPrice}}</li>
+                    </div>
+                </ul>
+            <a href='/all_cars'>Here are what other people think they are going to sell</a>
+            <a href='/'>Leave</a>
+        </div>
+    </body>
+</html>
