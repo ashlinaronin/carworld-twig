@@ -30,6 +30,12 @@
         return $app['twig']->render('sell.html.twig');
     });
 
+    $app->post('/car_added', function() use ($app) {
+        $newcar = new Car($_POST['make_model'], $_POST['price'], $_POST['miles'], $_POST['image_path']);
+        $newcar->save();
+        return $app['twig']->render('car_added.html.twig', array('newcar' => $newcar));
+    });
+
     $app->post('/results', function() use ($app) {
         setlocale(LC_MONETARY, 'en_US'); // Add location info for money format
 
