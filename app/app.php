@@ -55,10 +55,15 @@
         return $app['twig']->render('results.html.twig', array('search_results' => $cars_matching_search));
 
     });
+
     $app->get('/all_cars', function() use ($app){
         return $app['twig']->render('all_cars.html.twig', array('all_cars' => Car::getAll()));
     });
-    // /sell_car
+
+    $app->get('/delete_all', function() use ($app) {
+        Car::deleteAll();
+        return $app['twig']->render('delete_all.html.twig');
+    });
 
     return $app;
 

@@ -60,7 +60,7 @@ class Car
     }
 
     static function deleteAll() {
-        $_SESSION['list_of_tasks'] = array();
+        $_SESSION['list_of_cars'] = array();
     }
 }
 ?>
