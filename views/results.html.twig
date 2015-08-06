@@ -2,8 +2,10 @@
     <head>
         <title>Here is your stuff</title>
         <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
-        {# redirect to give idiotic buyer another chance after 1.5 seconds #}
-        <meta http-equiv="refresh" content="1.5; URL='/buy'" />
+        {# redirect to give unrealistic buyer another chance after 1.5 seconds #}
+        {% if search_results is empty %}
+            <meta http-equiv="refresh" content="1.5; URL='/buy'" />
+        {% endif %}
     </head>
     <body>
         <div class='container'>
@@ -13,15 +15,18 @@
                     {% for car in search_results %}
                     {# This syntax gives twig access to the class Car's
                      private properties #}
-                        <li><strong>{{Car.getMake}}</strong></li>
-                        <li>${{Car.getPrice}}</li>
-                        <li>Miles: {{Car.getMiles}}</li>
-                        <li>{{Car.getImagePath}}</li>
+                        <li><strong>{{ car.getMake }}</strong></li>
+                        <li>${{ car.getPrice }}</li>
+                        <li>Miles: {{ car.getMiles }}</li>
+                        <li>{{ car.getImagePath }}</li>
                     {% endfor %}
                 </ul>
             {% else %}
                 <h3>Please re-evaluate your expectations.</h3>
             {% endif %}
+            <a href="/">Home</a>
+            <a href="http://www.cleverbot.com/">Customer Service</a>
         </div>
+
     </body>
 </html>

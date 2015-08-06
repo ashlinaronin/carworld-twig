@@ -43,7 +43,7 @@
         $cars_matching_search = array();
 
         foreach ($all_cars as $car) {
-            if ($car->worthBuying($_GET['price'], $_GET['miles'])) {
+            if ($car->worthBuying($_POST['price'], $_POST['miles'])) {
                 array_push($cars_matching_search, $car);
             }
         }
