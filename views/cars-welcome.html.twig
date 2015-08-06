@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+        <title>WELCOME TO CARWORLD 2.0</title>
+    </head>
+    <body>
+        <div class='container'>
+            <h1>You thought CarWorld 1.0 was out of this world...</h1>
+            <form  action='/carworld-results' method='get'>
+                <div class='form-group'>
+                    <label for='price'>Enter Maximum Price</label>
+                    <input type='number' name='price' id='price' class='form-control'>
+                </div>
+                <div class='form-group'>
+                    <label for='miles'>Enter Maximum Miles</label>
+                    <input type='number' name='miles' id='miles' class='form-control'>
+                </div>
+                    <button name='submit' class='btn btn-success'>Submit</button>
+            </form>
+        </div>
+    </body>
+</html>
