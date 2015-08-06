@@ -10,12 +10,15 @@
 
 
     $app = new Silex\Application();
+    $app['debug'] = true;
+
     //enables twig for the website
-    $app->register (new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR.'/../views'
+    $app->register (new Silex\Provider\TwigServiceProvider(), array(
+        'twig.path' => __DIR__.'/../views'
     ));
 
     $app->get('/', function() use ($app) {
-        return $app['twig']->render('cars-welcome.html.twig', array('cars' => Car::getAll()));
+        return $app['twig']->render('cars-welcome.html.twig', array());
     });
 
     return $app;
