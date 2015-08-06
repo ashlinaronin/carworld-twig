@@ -21,6 +21,26 @@
         return $app['twig']->render('cars-welcome.html.twig', array());
     });
 
+    $app->post('/results', function() use ($app) {
+        setlocale(LC_MONETARY, 'en_US'); // Add location info for money format
+
+        $all_cars = Car::getAll();
+        $cars_matching_search = array();
+
+        foreach ($all_cars as $car) {
+            if ($car->worthBuying($_GET['price'], $_GET['miles'])) {
+                array_push($cars_matching_search, $car);
+            }
+        }
+
+        // Twig pages take a dictionary of whatever data you might want to display in them.
+        // Here we send it a dictionary with one key/value pair- the key is 'search_results'
+        // and the value is the array of cars that match the user's search.
+        // This gives twig access to this information.
+        return $app['twig']->render('results.html.twig', array('search_results' => $cars_matching_search));
+
+    });
+
     return $app;
 
 ?>

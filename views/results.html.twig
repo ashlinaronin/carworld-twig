@@ -5,10 +5,21 @@
     </head>
     <body>
         <div class='container'>
-            <h1>Here are the cars you will like:</h1>
-            <ul>
-                <!--{% if car is empty%} -->
-            </ul>
+            {% if search_results is not empty %}
+                <h1>Here are the cars you will like:</h1>
+                <ul>
+                    {% for car in search_results %}
+                    {# This syntax gives twig access to the class Car's
+                     private properties #}
+                        <li><strong>{{Car.getMake}}</strong></li>
+                        <li>${{Car.getPrice}}</li>
+                        <li>Miles: {{Car.getMiles}}</li>
+                        <li>{{Car.getImagePath}}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <h3>Please adjust your idiotic expectations.</h3>
+            {% endif %}
         </div>
     </body>
 </html>
