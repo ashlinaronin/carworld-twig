@@ -4,10 +4,8 @@
         <title>ALL of the carks</title>
     </head>
     <body>
-        <h1>The Cars:</h1>
-        <a href='/delete_all'>None of these cars work for me.</a>
-        <a href='/'>Get outta here</a>
         <div class='container'>
+            <h1>The Cars:</h1>
             {% if all_cars is not empty %}
                 <ul>
                     {% for car in all_cars %}
@@ -20,8 +18,10 @@
                     {% endfor %}
                 </ul>
             {% else %}
-                <h1>Sorry.  We are currently out of business.</h1>
+                <h3>Sorry.  We are currently out of business.</h3>
             {% endif %}
+            <a href='/delete_all'>None of these cars work for me.</a>
+            <a href='/'>Get outta here</a>
         </div>
     </body>
 </html>
