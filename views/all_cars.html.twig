@@ -1,13 +1,14 @@
 <html>
     <head>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
         <title>ALL of the carks</title>
     </head>
     <body>
         <h1>The Cars:</h1>
         <div class='container'>
-            {% if cars is not empty %}
+            {% if all_cars is not empty %}
                 <ul>
-                    {% for car in cars %}
+                    {% for car in all_cars %}
                         <div>
                             <li><img src ='{{car.getImagePath}}' alt = '{{car.getMake}}'></li>
                             <li>{{car.getMake}}</li>
